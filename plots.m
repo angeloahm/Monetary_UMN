@@ -1,0 +1,72 @@
+
+% Policy Plots 
+figure(1)
+plot(a_grid, policy_d)
+title('Default policy')
+legend('Lowest shock', 'Low shock', 'Avg. shock', 'High shock', 'Highest shock')
+xlabel('a')
+ylabel('d(a,z)')
+saveas(gcf,'d_policy.png')
+
+
+figure(2)
+plot(a_grid, policy_a)
+title('Debt policy')
+legend('Lowest shock', 'Low shock', 'Avg. shock', 'High shock', 'Highest shock')
+xlabel('a')
+ylabel('a(a,z)')
+saveas(gcf,'a_policy.png')
+
+figure(3)
+plot(a_grid, q)
+title('Price schedule')
+legend('Lowest shock', 'Low shock', 'Avg. shock', 'High shock', 'Highest shock')
+xlabel('a')
+ylabel('q(a,z)')
+saveas(gcf,'q.png')
+
+
+figure(4)
+plot(a_grid, V)
+title('Value Function')
+legend('Lowest shock', 'Low shock', 'Avg. shock', 'High shock', 'Highest shock')
+xlabel('a')
+ylabel('V(a,z)')
+saveas(gcf,'vf.png')
+
+figure(5)
+plot(a_grid, policy_b)
+title('Borrowing policy')
+legend('Lowest shock', 'Low shock', 'Avg. shock', 'High shock', 'Highest shock')
+xlabel('a')
+ylabel('b(a,z)')
+saveas(gcf,'b_policy.png')
+
+
+figure(6)
+plot(linspace(1,250,250), a_sim_aux(1:250))
+title('Simulated debt due')
+xlabel('Years')
+ylabel('a_t')
+saveas(gcf,'a_sim.png')
+
+figure(7)
+plot(linspace(1,250,250), b_sim_aux(1:250))
+title('Simulated debt')
+xlabel('Years')
+ylabel('b_t')
+saveas(gcf,'b_sim.png')
+
+figure(8)
+plot(linspace(1,250,250), q_sim_aux(1:250))
+title('Simulated bond prices')
+xlabel('Years')
+ylabel('q_t')
+saveas(gcf,'q_sim.png')
+
+figure(9)
+plot(linspace(1,250,250), d_sim_aux(1:250))
+title('Simulated default policy')
+xlabel('Years')
+ylabel('d_t')
+saveas(gcf,'d_sim.png')
